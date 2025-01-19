@@ -1,0 +1,71 @@
+/*
+//Code for lab final exam, regarding inventory management
+#include <iostream>
+using namespace std;
+struct product{
+    string name;
+    int quantity;
+    double price;
+    void display(){
+        cout << name << " ";
+        cout << quantity<< " ";
+        cout << price << endl;
+
+    }
+    double totalprice(){
+        double totalprice = quantity*price;
+        return totalprice;
+    }
+
+    double discount;
+    double applyProductDiscount( int quantity){
+            if ( quantity <= 10){
+                discount = 0.2;
+                
+            }
+            else if ( quantity > 10 && quantity < 50){
+                discount = 0.1;
+                
+            }
+            else if ( quantity >= 50){
+                discount = 0.05;
+                
+            }
+            return discount;
+    }
+};
+
+int main(){
+    product damn[3];
+    for ( int i=0; i<3; i++){
+        cin >> damn[i].name;
+        cin >> damn[i].price;
+        cin >> damn[i].quantity;
+    }
+    
+    for ( int i=0; i<3; i++){
+        damn[i].display() ;
+    }
+    double higher = damn[0].price;
+    string nam;
+
+    for ( int i=0; i<3; i++){
+        if ( damn[i].totalprice() > higher){
+            higher = damn[i].totalprice();
+            nam = damn[i].name;
+        }
+        else
+        continue;
+    }
+    cout << "Higher budget product : " << nam << endl;
+    for ( int i=0; i<3; i++){
+        damn[i].price = damn[i].price - damn[i].price * damn[i].applyProductDiscount(damn[i].quantity) ;
+        cout << damn[i].name << " Dicounted price "<< damn[i].price << endl;
+    } 
+    return 0;
+
+
+}
+*/
+
+
