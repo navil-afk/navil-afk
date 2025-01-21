@@ -69,3 +69,131 @@ int main(){
 */
 
 
+// A 2D maze game that will take user input and the player will move accorss the maze to exit.
+/*
+#include<iostream>
+using namespace std;
+
+class Maze{
+    public: 
+    int player_row, player_column ,maze_row, maze_column ;
+    int maze[100][100];
+
+
+    Maze ( int row, int column){
+        maze_row = row;
+        maze_column = column;
+        initial_maze(row, column);
+    }
+    void initial_maze(int row, int column){
+          
+          for (int i=0; i<row ;i++){
+            for ( int j=0; j<column; j++){
+                cin >> maze[i][j];
+            }
+          }  
+          maze[0][0] = 3;
+          player_row =0;
+          player_column =0;
+          maze[row-1][column-1] = 4;
+    }
+
+
+    void display_maze(){
+        for ( int i=0; i< maze_row; i++){
+            for ( int j=0; j< maze_column; j++){
+                if ( i == player_row && j == player_column){
+                    cout << "N " ;
+                    continue;
+                }
+                if (maze[i][j] == 1 || maze[i][j] == 2 || maze[i][j] == 3 || maze[i][j] == 4 ){
+                    if ( maze[i][j] == 1){
+                        cout << "-" << " " ;
+                    }
+                    else if(maze[i][j] == 2){
+                        cout << "!" << " ";
+
+                    }
+                    else if( maze[i][j] == 3){
+                        cout << "@" << " ";
+                    }
+                    else{
+                        cout << "#" << " ";
+                    }
+
+                }
+                else{
+                    maze[i][j] == 1;    // converting errorful inputs to paths;
+                    cout << "-" << "  " ;
+                }
+            }
+            cout << endl;
+        }
+    }
+
+
+    bool move_player(char direction){
+            int  updated_row = player_row;
+            int  updated_column= player_column;
+
+            
+            if ( direction == 'W')
+                updated_row--;
+            
+            else if (direction == 'A')
+                updated_column--;
+            
+            else if (direction == 'D')
+                updated_column++;
+            
+            else if ( direction== 'S')
+                updated_row++ ;
+            
+        
+            if ( updated_row >= 0 && updated_column >= 0 &&
+                 updated_row < maze_row && updated_column < maze_column 
+                 && maze[updated_row][updated_column] != 2 ){
+                    player_row = updated_row;
+                    player_column = updated_column;
+                    return true;
+                 }
+                return false;
+    }
+    
+    void play_game() {
+        char direction;
+        while(true) {
+            display_maze();
+            cin >> direction;
+
+            if(move_player(direction)) {
+                if(maze[player_row][player_column] == 4) {
+                    display_maze();
+                    cout << "Congrats, you have escaped the maze\n";
+                    break;
+                }
+            } 
+            else {
+                cout << "Invalid move!\n";
+            }
+        }
+    }
+
+    
+    
+};
+
+
+
+int main(){
+    int row, column;
+    cout << "Select the range of your 2D maze: " ;
+    cin >> row >> column;
+    Maze lab( row, column);
+    lab.play_game();
+
+    return 0; 
+}
+*/
+
+
